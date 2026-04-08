@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #0f172a;
+  --color-slate-900: #111827;
+  --color-slate-800: #1f2937;
+  --color-slate-700: #374151;
+  --color-slate-600: #4b5563;
+  --color-slate-500: #6b7280;
+  --color-slate-400: #9ca3af;
+  --color-slate-300: #d1d5db;
+  --color-slate-200: #e5e7eb;
+  --color-slate-100: #f3f4f6;
+  --color-sand-50: #faf7f1;
+  --color-sand-100: #f2ede3;
+  --color-sand-200: #e2d9c8;
+  --color-sand-300: #d3c7b2;
+  --color-night-950: #0a0a23;
+  --color-night-900: #1b1b32;
+  --color-night-850: #2a2a40;
+  --color-night-800: #3b3b4f;
+  --color-night-700: #4a4a68;
+  --color-olive-800: #5f6740;
+  --color-olive-700: #656d3f;
+  --color-olive-600: #84934a;
+  --color-olive-400: #9fac69;
+  --color-olive-300: #c7cfad;
+  --color-olive-200: #d7ddc1;
+  --color-olive-100: #eef0e3;
+  --color-olive-50: #f6f7f0;
+  --color-rosewood-900: #3b2121;
+  --color-rosewood-800: #492828;
+  --color-rosewood-700: #5b3535;
+  --color-rosewood-100: #f3ecec;
+  --color-green-600: #047857;
+  --color-green-500: #059669;
+  --color-green-400: #10b981;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #0a0a23;
+    color: #f5f6f7;
+    font-family: "Urbanist", sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(241, 190, 50, 0.32);
+    color: #0a0a23;
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply relative min-h-screen overflow-hidden bg-transparent text-slate-100;
+  }
+
+  .ambient-grid::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-25;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(241, 190, 50, 0.06) 1px, transparent 1px);
+    background-size: 96px 96px;
+    mask-image: linear-gradient(to bottom, white, transparent 90%);
+  }
+
+  .ambient-orb {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+
+  .section-wrap {
+    @apply relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-panel {
+    @apply rounded-3xl border border-night-700/70 bg-night-900/92 shadow-xl shadow-black/40;
+  }
+
+  .soft-panel {
+    @apply rounded-3xl border border-night-700/70 bg-night-850/96 shadow-lg shadow-black/35;
+  }
+
+  .pink-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-yellow-400 bg-yellow-400 px-5 py-3 text-sm font-semibold text-night-950 shadow-sm shadow-black/25 transition duration-300 hover:border-yellow-300 hover:bg-yellow-300 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-night-700 bg-night-900 px-5 py-3 text-sm font-semibold text-slate-100 transition duration-300 hover:border-yellow-400/60 hover:bg-night-850;
+  }
+
+  .nav-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-night-700 bg-night-900 px-4 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-yellow-400/60 hover:bg-night-850;
+  }
+
+  .pink-input {
+    @apply w-full rounded-2xl border border-night-700 bg-night-950 px-4 py-3.5 text-slate-100 placeholder:text-slate-400 outline-none transition duration-300 focus:border-yellow-400 focus:shadow-sm focus:shadow-black/25;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-yellow-200 uppercase;
+  }
+
+  .metric-card {
+    @apply rounded-3xl border border-night-700/70 bg-night-850/96 p-6 shadow-lg shadow-black/30;
+  }
+
+  .panel-stack {
+    @apply flex h-full flex-col gap-6 p-6 sm:p-7;
+  }
+
+  .panel-card {
+    @apply rounded-3xl border border-night-700/70 bg-night-850/96 p-6 shadow-lg shadow-black/30;
+  }
+
+  .panel-card-muted {
+    @apply rounded-3xl border border-night-700/70 bg-night-900/96 p-6 shadow-lg shadow-black/30;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl;
+  }
+
+  .muted-copy {
+    @apply text-sm leading-6 text-slate-300 sm:text-base;
+  }
+
+  .surface-outline {
+    @apply relative overflow-hidden;
+  }
+
+  .surface-outline::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-yellow-400 to-transparent opacity-50;
+  }
+
+  .fade-up {
+    animation: fade-up 0.8s ease both;
+  }
+
+  .fade-up-delay-1 {
+    animation: fade-up 0.8s ease 0.12s both;
+  }
+
+  .fade-up-delay-2 {
+    animation: fade-up 0.8s ease 0.24s both;
+  }
+
+  .fade-up-delay-3 {
+    animation: fade-up 0.8s ease 0.36s both;
+  }
+
+  .markdown-body {
+    @apply space-y-4 text-base leading-7 text-slate-200;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    @apply mb-3 text-slate-50;
+  }
+
+  .markdown-body h1 {
+    @apply text-3xl font-semibold;
+  }
+
+  .markdown-body h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  .markdown-body h3 {
+    @apply text-xl font-semibold;
+  }
+
+  .markdown-body p {
+    @apply mb-4;
+  }
+
+  .markdown-body ul,
+  .markdown-body ol {
+    @apply mb-4 space-y-2 pl-5;
+  }
+
+  .markdown-body li {
+    @apply text-slate-200;
+  }
+
+  .markdown-body strong {
+    @apply font-semibold text-slate-50;
+  }
+
+  .markdown-body code {
+    @apply rounded-md bg-night-700 px-1.5 py-0.5 text-sm text-yellow-200;
+  }
+
+  .markdown-body pre {
+    @apply overflow-x-auto rounded-2xl border border-night-700 bg-night-950 p-4;
+  }
+
+  .markdown-body pre code {
+    @apply bg-transparent p-0 text-slate-100;
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -18,16 +18,16 @@ frontend/  React + Vite client application
 ## Screenshots
 
 ### Landing Page
-![Landing Page](./public/LandingPage.png)
+![Landing Page](./frontend/public/LandingPage.png)
 
 ### Sign In
-![Sign In](./public/signIn.png)
+![Sign In](./frontend/public/signIn.png)
 
 ### Dashboard
-![Dashboard](./public/HomePage.png)
+![Dashboard](./frontend/public/HomePage.png)
 
 ### Interview Session Workspace
-![Interview Session](./public/Session_workspace.png)
+![Interview Session](./frontend/public/Session_workspace.png)
 
 ## Getting Started
 

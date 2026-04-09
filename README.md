@@ -2,19 +2,6 @@
 
 A full-stack interview preparation app with a React frontend and an Express/MongoDB backend. Users can create role-based prep workspaces, generate tailored interview questions, and expand answers with Gemini-powered explanations.
 
-## Project Structure
-
-```text
-backend/   Express API, MongoDB models, auth, Gemini integration
-frontend/  React + Vite client application
-```
-
-## Tech Stack
-
-- Frontend: React, Vite, Tailwind CSS, React Router
-- Backend: Express, MongoDB, Mongoose, JWT auth
-- AI: Google Gemini
-
 ## Screenshots
 
 ### Landing Page
@@ -28,6 +15,19 @@ frontend/  React + Vite client application
 
 ### Interview Session Workspace
 ![Interview Session](./frontend/public/Session_workspace.png)
+
+## Project Structure
+
+```text
+backend/   Express API, MongoDB models, auth, Gemini integration
+frontend/  React + Vite client application
+```
+
+## Tech Stack
+
+- Frontend: React, Vite, Tailwind CSS, React Router
+- Backend: Express, MongoDB, Mongoose, JWT auth
+- AI: Google Gemini
 
 ## Getting Started
 

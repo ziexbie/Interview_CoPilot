@@ -15,6 +15,20 @@ frontend/  React + Vite client application
 - Backend: Express, MongoDB, Mongoose, JWT auth
 - AI: Google Gemini
 
+## Screenshots
+
+### Landing Page
+![Landing Page](./public/LandingPage.png)
+
+### Sign In
+![Sign In](./public/signIn.png)
+
+### Dashboard
+![Dashboard](./public/HomePage.png)
+
+### Interview Session Workspace
+![Interview Session](./public/Session_workspace.png)
+
 ## Getting Started
 
 ### 1. Install dependencies
